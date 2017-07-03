@@ -1,13 +1,13 @@
 # react-mutation-observer
 
-![Downloads](https://img.shields.io/npm/dm/react-mutation-observer.svg)
-![Downloads](https://img.shields.io/npm/dt/react-mutation-observer.svg)
-![npm version](https://img.shields.io/npm/v/react-mutation-observer.svg)
-![dependencies](https://img.shields.io/david/jcgertig/react-mutation-observer.svg)
-![dev dependencies](https://img.shields.io/david/dev/jcgertig/react-mutation-observer.svg)
-![License](https://img.shields.io/npm/l/react-mutation-observer.svg)
+[![Downloads][npm-dm]][package-url]
+[![Downloads][npm-dt]][package-url]
+[![NPM Version][npm-v]][package-url]
+[![Dependencies][deps]][package-url]
+[![Dev Dependencies][dev-deps]][package-url]
+[![License][license]][package-url]
 
-React wrapper for mutation observers.
+__React wrapper for mutation observers.__
 
 > Based on
 [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
@@ -195,7 +195,7 @@ __onMutation Payload Structures__
       name,
       namespace,
       target
-    };
+    }
   ```
   - Type: CHARACTER_DATA
   ```javascript
@@ -209,3 +209,11 @@ __onMutation Payload Structures__
 ## License
 
 MIT
+
+[npm-dm]: https://img.shields.io/npm/dm/react-mutation-observer.svg
+[npm-dt]: https://img.shields.io/npm/dt/react-mutation-observer.svg
+[npm-v]: https://img.shields.io/npm/v/react-mutation-observer.svg
+[deps]: https://img.shields.io/david/jcgertig/react-mutation-observer.svg
+[dev-deps]: https://img.shields.io/david/dev/jcgertig/react-mutation-observer.svg
+[license]: https://img.shields.io/npm/l/react-mutation-observer.svg
+[package-url]: https://npmjs.com/package/react-mutation-observer

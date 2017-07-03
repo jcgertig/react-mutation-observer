@@ -1,7 +1,7 @@
 {
   "name": "react-mutation-observer",
   "description": "React wrapper for mutation observers.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "author": "jcgertig",
   "repository": "jcgertig/react-mutation-observer",
