@@ -1,4 +1,5 @@
 import React, { Component, cloneElement } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import memoize from 'memoizerific';
 import omit from 'lodash.omit';
@@ -209,13 +210,22 @@ export default function withObserver(Wrapped) {
       this.observer.observe(observedComponent(this.node), config);
     }
 
+    handleRef(node) {
+      if (typeof Wrapped.type === 'function') {
+        this.node = ReactDOM.findDOMNode(node);
+      } else {
+        this.node = node;
+      }
+    }
+
     render() {
       const props = omit(this.props, Object.keys(Wrapper.propTypes));
+
       if (typeof Wrapped === 'object') {
-        return cloneElement(Wrapped, { ...props, ref: (node) => (this.node = node) });
+        return cloneElement(Wrapped, { ...props, ref: this.handleRef });
       }
       return  (
-        <Wrapped {...props} ref={(node) => (this.node = node)} />
+        <Wrapped {...props} ref={this.handleRef} />
       );
     }
   }

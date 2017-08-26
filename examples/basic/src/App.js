@@ -3,6 +3,37 @@ import MutationObserver from 'react-mutation-observer';
 import logo from './logo.svg';
 import './App.css';
 
+class Test extends Component {
+  state = {
+    a: [],
+    c: 0
+  };
+
+  click = () => {
+    this.setState({ c: this.state.c + 1 });
+  }
+
+  add = () => {
+    const { a, c } = this.state;
+    a.push('item ' + c);
+    this.setState({ a });
+  }
+
+  render() {
+    return (
+      <div onClick={this.click}>
+        Clicks {this.state.c}
+        <div>
+          {this.state.a.map((i, key) => (
+            <div key={key}>{i}</div>
+          ))}
+        </div>
+        <span onClick={this.add}>Add</span>
+      </div>
+    );
+  }
+}
+
 class App extends Component {
   render() {
     return (
@@ -17,9 +48,7 @@ class App extends Component {
           onChildRemoval={console.log.bind(null, 'Child removal triggered.')}
           onChildAddition={console.log.bind(null, 'Child addition triggered.')}
         >
-          <div className="App-intro">
-            To get started, edit src/App.js and save to reload.
-          </div>
+          <Test />
         </MutationObserver>
       </div>
     );

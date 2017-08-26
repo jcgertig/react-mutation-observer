@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-mutation-observer": "^0.0.0-rc23"
+    "react-mutation-observer": "^1.1.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"
