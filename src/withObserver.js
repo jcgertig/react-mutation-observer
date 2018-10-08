@@ -118,12 +118,12 @@ export default function withObserver(Wrapped) {
         wrappedNode: this.node
       };
       if (addedNodes.length > 0) {
-        addedNodes.forEach((child) => {
+        Array.from(addedNodes).forEach((child) => {
           this.props.onMutation(CHILD_ADDED, { ...res, child });
         });
       }
       if (removedNodes.length > 0) {
-        removedNodes.forEach((child) => {
+        Array.from(removedNodes).forEach((child) => {
           this.props.onMutation(CHILD_REMOVED, { ...res, child });
         });
       }
@@ -146,7 +146,7 @@ export default function withObserver(Wrapped) {
         this.observer.disconnect();
       }
       this.observer = new MutationObserver((mutations) => {
-        mutations.forEach((data) => {
+        Array.from(mutations).forEach((data) => {
           this.mutationReducer(data.type, data);
         });
       });
@@ -183,7 +183,7 @@ export default function withObserver(Wrapped) {
       if (cats.length === 0) {
         config.childList = true;
       } else {
-        cats.forEach((key) => {
+        Array.from(cats).forEach((key) => {
           config[key] = true;
         });
       }
